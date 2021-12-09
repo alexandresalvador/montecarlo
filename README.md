@@ -20,7 +20,15 @@ npm i dotenv
 npm i mongoose
 npm i cors
 npm i require-dir
+npm i bcrypt
 
 // É criado os arquivos .gitignore e .env
 
 // Criada a pasta database, é criado o arquivo index.js
+
+// Crio a model User.js para armazenar os dados do usuario (user e senha),
+crio uma rota de cadastro e faço o cadastro do usuario com os dados que o usuario passar na requisiçao.
+
+// Faço o hash da senha usando o bcrypt
+
+// Crio uma rota para login, nessa rota eu valido os dados que foram passados na requisiçao, se o email existe e a senha esta correta. Apos isso eu gero um jwt de validade de 1 dia.
