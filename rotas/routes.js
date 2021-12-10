@@ -2,32 +2,32 @@ const express = require("express");
 const routes = express.Router();
 
 const ClienteController = require("./controllers/ClienteController");
-const ProdutoController = require("./controllers/ProdutoController");
-const PedidoController = require("./controllers/PedidoController");
-
+const AuthController = require("./controllers/AuthController");
+const ProdutosController = require("./controllers/ProdutosController");
 
 // As rotas de Clientes.
 
-routes.get("/cliente", ClienteController.index);
-routes.post("/cliente", ClienteController.save);
-routes.delete("/cliente/:id", ClienteController.destroy);
-routes.get("/cliente/:id", ClienteController.show);
-routes.put("/cliente/:id", ClienteController.update);
+routes.get("/api/cliente", ClienteController.index);
+routes.post("/api/cliente/", ClienteController.save);
+routes.delete("/api/cliente/:id", ClienteController.destroy);
+routes.get("/api/cliente/:id", ClienteController.show);
+routes.put("/api/cliente/:id", ClienteController.update);
 
-// As rotas de produtos.
+// As rotas de Autenticaçao.
 
-routes.get("/produto", ProdutoController.index);
-routes.post("/produto", ProdutoController.save);
-routes.delete("/produto/:id", ProdutoController.destroy);
-routes.get("/produto/:id", ProdutoController.show);
-routes.put("/produto/:id", ProdutoController.update);
+routes.get("/api/auth", AuthController.index);
+routes.post("/api/auth/", AuthController.save);
+routes.delete("/api/auth/:id", AuthController.destroy);
+routes.get("/api/auth/:id", AuthController.show);
+routes.put("/api/auth/:id", AuthController.update);
 
-// As rotas de Pedidos.
+// As rotas de Produtos.
 
-routes.get("/pedido", PedidoController.index);
-routes.post("/pedido", PedidoController.save);
-routes.delete("/pedido/:id", PedidoController.destroy);
-routes.get("/pedido/:id", PedidoController.show);
-routes.put("/pedido/:id", PedidoController.update);
+routes.get("/api/produtos", ProdutosController.index);
+routes.post("/api/produtos", ProdutosController.save);
+routes.delete("/api/produtos/:id", ProdutosController.destroy);
+routes.get("/api/produtos/:id", ProdutosController.show);
+routes.put("/api/produtos/:id", ProdutosController.update);
+
 
 module.exports = routes;

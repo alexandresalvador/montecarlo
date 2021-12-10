@@ -1,8 +1,10 @@
 const mongoose = require("../database/index");
+const uuid = require('uuid');
 const ProdutoSchema = new mongoose.Schema({
-  nome: {
-    type: String,
-    required: true,
+
+  tipo: {
+      type: String,
+      required: true,
   },
   descricao: {
     type: String,
@@ -24,15 +26,15 @@ mongoose.model("Produto", ProdutoSchema);
 
 produto:
 
-id: number,
-nome: string,
-descricao: string,
-preco: number,
+id: UUID
+tipo: String
+descricao: String
+preco: number
 
 jogar no Postman:
 
 {
-    "nome": "",
+    "tipo": "",
     "descricao": "",
     "preco": 
 }

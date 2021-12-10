@@ -16,9 +16,10 @@ module.exports = {
         console.log('123', produto)
         return res.json(produto);
     },
+
     async destroy(req, res) {
         const produto = await Produto.findByIdAndRemove(req.params.id);
-        return res.json({message: 'O produto foi removido com sucesso!'});
+        return res.json({message: 'Produto removido com sucesso!'});
     },
     async update(req, res) {
         const produto = await Produto.findByIdAndUpdate(req.params.id, req.body, {
