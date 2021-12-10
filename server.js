@@ -17,7 +17,7 @@ const Auth = mongoose.model("Auth");
 
 
 // adicionando rotas
-app.use("/api", require("./rotas/routes"));
+app.use("", require("./routes"));
 
 app.listen(port, () => {
   console.log(`API rodando, http://localhost:${port}`);
