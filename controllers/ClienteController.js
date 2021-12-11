@@ -20,7 +20,7 @@ module.exports = {
 
   async destroy(req, res) {
     const cliente = await Cliente.findByIdAndRemove(req.params.id);
-    return res.json({ message: "O cliente foi removido com sucesso" });
+    return res.json({ message: "Cliente removido com sucesso!" });
   },
 
   async update(req, res) {

@@ -8,7 +8,7 @@ const ProdutoSchema = new mongoose.Schema({
   },
   descricao: {
     type: String,
-    required: true,
+    required: false,
   },
   preco: {
     type: Number,

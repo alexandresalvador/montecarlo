@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
-const db = require('../database/index');
+const database = require('../database/index');
+
 const Joi = require('joi');
 
 module.exports = Joi.object({

@@ -13,6 +13,7 @@ routes.delete("/api/cliente/:id", ClienteController.destroy);
 routes.get("/api/cliente/:id", ClienteController.show);
 routes.put("/api/cliente/:id", ClienteController.update);
 
+
 // As rotas de Autenticaçao.
 
 //routes.get("/api/auth", AuthController.index);
@@ -20,6 +21,7 @@ routes.put("/api/cliente/:id", ClienteController.update);
 //routes.delete("/api/auth/:id", AuthController.destroy);
 //routes.get("/api/auth/:id", AuthController.show);
 //routes.put("/api/auth/:id", AuthController.update);
+
 
 // As rotas de Produtos.
 

@@ -13,8 +13,6 @@ app.use(cors());
 requireDir("./models");
 const Produto = mongoose.model("Produto");
 const Cliente = mongoose.model("Cliente");
-const Auth = mongoose.model("Auth");
-
 
 // adicionando rotas
 app.use("", require("./routes"));

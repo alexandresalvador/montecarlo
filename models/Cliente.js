@@ -25,11 +25,12 @@ const ClienteSchema = new mongoose.Schema({
         min: 8,
         set: value => 
          bcrypt
-          .createHash('md5')
-          .update(value)
-          .digest('hex'),
+         .createHash('md5')
+         .update(value)
+         .digest('hex'),
   },
 });
+
 
 mongoose.model("Cliente", ClienteSchema);
 
@@ -51,4 +52,5 @@ Postman:
     "email": "",
     "senha": "",
 }
+
 */
