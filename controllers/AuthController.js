@@ -9,13 +9,13 @@ module.exports = {
     const clienteExistente = await Cliente.findOne({ email })
     if (clienteExistente) {
       return res.status(409).json({
-        mensagem: 'E-mail já está em uso',
+        mensagem: 'O E-mail já está em uso!',
       })
     }
     const senhaHash = await bcrypt.hash(senha, 10)
     const novoCliente = await Cliente.create({ email, senha, razaoSocial, nomeFantasia, nomeResponsavel })
     res.json({
-      mensagem: 'Cliente cadastrado. Faça login agora',
+      mensagem: 'Cliente cadastrado. Faça login agora!',
     })
   },
   
@@ -26,13 +26,13 @@ module.exports = {
     
     if (!cliente) {
       return res.status(401).json({
-        mensagem: 'E-mail ou senha inválidos',
+        mensagem: 'O E-mail ou senha é inválido!',
       })
     }
     
     if (!bcrypt.compare(senha, cliente.senha)) {
       return res.status(401).json({
-        mensagem: 'E-mail ou senha inválidos',
+        mensagem: 'O E-mail ou senha é inválido!',
       })
     }
     
@@ -42,5 +42,6 @@ module.exports = {
       mensagem: 'Cliente logado com sucesso!',
       jwtToken,
     })
-  }
-}
+  },
+};
+

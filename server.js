@@ -14,7 +14,8 @@ requireDir("./models");
 const Produto = mongoose.model("Produto");
 const Cliente = mongoose.model("Cliente");
 
-// adicionando rotas
+// adicionando as rotas no http
+
 app.use("", require("./routes"));
 
 app.listen(port, () => {

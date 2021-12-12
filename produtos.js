@@ -4,14 +4,15 @@ var router = express.Router();
 const db = require('./models/db');
 const produtoSchema = require('./models/produtoSchema');
 
-function validationMid(req, res, next){
+function validationMiddle (req, res, next){
   if(['POST', 'PUT'].indexOf(req.method) !== -1) {
     if(!req.body.tipo || !req.body.preco) {
       return res
         .status(422)
-        .json({error: 'ERRO: CAMPOS OBRIGATORIOS NAO PODEM SER NULOS.'});
+        .json({error: 'OS CAMPOS OBRIGATORIOS NAO PODEM SER NULOS.'});
     }
   }
+
   const { error } = userSchema.validate(req.body);
   if(error) {
     return res.status(422).json({error: error.details});
@@ -21,18 +22,21 @@ function validationMid(req, res, next){
 }
 
 // listagem de produtos
+
 router.get('/', function(req, res, next) {
   res.json(db.findProdutos());
 });
 
 //GET de produtos por id 
+
 router.get('/:id', function(req, res) {
   const id = req.params.id;
   res.json(db.findProduto(id));
 });
 
 // Postando novo produto
-router.post('/', validationMid, (req,res) => {
+
+router.post('/', validationMiddle, (req,res) => {
   const {error} = userSchema.validate(eq.body);
   if(error) {
     return res
@@ -44,13 +48,15 @@ router.post('/', validationMid, (req,res) => {
 });
 
 // Atualizando o produto
-router.put('/:id', validationMid, (req,res) => {
+
+router.put('/:id', validationMiddle, (req,res) => {
   const id = req.params.id;
   db.updateProduto(id, req.body);
   res.status(200).json();
  });
 
 // Deletando o produto
+
 router.delete('/:id', (req,res) => {
   const id = req.params.id;
   db.deleteProduto(id);

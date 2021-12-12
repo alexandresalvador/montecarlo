@@ -16,11 +16,8 @@ routes.put("/api/cliente/:id", ClienteController.update);
 
 // As rotas de Autenticaçao.
 
-//routes.get("/api/auth", AuthController.index);
-//routes.post("/api/auth/", AuthController.save);
-//routes.delete("/api/auth/:id", AuthController.destroy);
-//routes.get("/api/auth/:id", AuthController.show);
-//routes.put("/api/auth/:id", AuthController.update);
+routes.get("/api/auth", AuthController.login);
+routes.post("/api/auth/", AuthController.registrar);
 
 
 // As rotas de Produtos.

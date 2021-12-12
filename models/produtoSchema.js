@@ -18,5 +18,4 @@ module.exports = Joi.object({
 
 });
 
-
 module.exports = router;
